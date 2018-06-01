@@ -1,0 +1,15 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/lesson/lesson",
+        "pages/score/score",
+        "pages/level/level"
+    ],
+    "window": {
+        "backgroundColor": "#F1F1F1",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#FFFFFF",
+        "navigationBarTitleText": "爱瑞克英语学习室",
+        "navigationBarTextStyle": "black"
+    }
+}
