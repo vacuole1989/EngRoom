@@ -12,9 +12,9 @@ public class CarouselPic implements Serializable {
     private long carouselPicSeqId;
     @NotNull
     @Column(length = 32)
-    private String name;
+    private String carouselPicName;
     @Column(length = 128)
-    private String desc;
+    private String carouselPicDesc;
     /**
      * 1-超链接，2-图片
      */
@@ -32,22 +32,30 @@ public class CarouselPic implements Serializable {
     @Column(precision = 1)
     private int seqNo=1;
 
-
-    public String getName() {
-        return name;
+    public long getCarouselPicSeqId() {
+        return carouselPicSeqId;
     }
 
-    public CarouselPic setName(String name) {
-        this.name = name;
+    public CarouselPic setCarouselPicSeqId(long carouselPicSeqId) {
+        this.carouselPicSeqId = carouselPicSeqId;
         return this;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getCarouselPicName() {
+        return carouselPicName;
     }
 
-    public CarouselPic setDesc(String desc) {
-        this.desc = desc;
+    public CarouselPic setCarouselPicName(String carouselPicName) {
+        this.carouselPicName = carouselPicName;
+        return this;
+    }
+
+    public String getCarouselPicDesc() {
+        return carouselPicDesc;
+    }
+
+    public CarouselPic setCarouselPicDesc(String carouselPicDesc) {
+        this.carouselPicDesc = carouselPicDesc;
         return this;
     }
 
@@ -87,22 +95,12 @@ public class CarouselPic implements Serializable {
         return this;
     }
 
-
     public int getSeqNo() {
         return seqNo;
     }
 
     public CarouselPic setSeqNo(int seqNo) {
         this.seqNo = seqNo;
-        return this;
-    }
-
-    public long getCarouselPicSeqId() {
-        return carouselPicSeqId;
-    }
-
-    public CarouselPic setCarouselPicSeqId(long carouselPicSeqId) {
-        this.carouselPicSeqId = carouselPicSeqId;
         return this;
     }
 }

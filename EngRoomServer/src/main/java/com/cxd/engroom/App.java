@@ -51,7 +51,7 @@ public class App extends SpringBootServletInitializer {
         configuration.setMapUnderscoreToCamelCase(true);
         sqlSessionFactoryBean.setConfiguration(configuration);
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        sqlSessionFactoryBean.setMapperLocations(resolver.getResources("classpath:/com/cxd/rtcroom/mapper/*.xml"));
+        sqlSessionFactoryBean.setMapperLocations(resolver.getResources("classpath:/com/cxd/engroom/mapper/*.xml"));
         return sqlSessionFactoryBean.getObject();
     }
 

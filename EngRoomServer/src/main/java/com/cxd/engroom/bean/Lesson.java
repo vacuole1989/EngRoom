@@ -5,14 +5,14 @@ import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @Entity
-@Table(uniqueConstraints = {@UniqueConstraint(columnNames={"chapterSeqId", "seqNo"})})
+@Table(uniqueConstraints = {@UniqueConstraint(columnNames={"courseSeqId", "seqNo"})})
 public class Lesson implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long lessonSeqId;
     @NotNull
-    private long chapterSeqId;
+    private long courseSeqId;
     @Column(precision = 3)
     @NotNull
     private int seqNo;
@@ -20,18 +20,17 @@ public class Lesson implements Serializable {
     @NotNull
     private String showText;
 
-    private String desc;
+    private String lessonDesc;
 
     @Column(length = 32)
     @NotNull
-    private String name;
+    private String lessonName;
     @NotNull
     @Column(length = 19)
     private String createTime;
     @NotNull
     @Column(length = 19)
     private String modifyTime;
-
 
     public long getLessonSeqId() {
         return lessonSeqId;
@@ -42,14 +41,7 @@ public class Lesson implements Serializable {
         return this;
     }
 
-    public long getChapterSeqId() {
-        return chapterSeqId;
-    }
 
-    public Lesson setChapterSeqId(long chapterSeqId) {
-        this.chapterSeqId = chapterSeqId;
-        return this;
-    }
 
     public int getSeqNo() {
         return seqNo;
@@ -60,12 +52,30 @@ public class Lesson implements Serializable {
         return this;
     }
 
-    public String getName() {
-        return name;
+    public String getShowText() {
+        return showText;
     }
 
-    public Lesson setName(String name) {
-        this.name = name;
+    public Lesson setShowText(String showText) {
+        this.showText = showText;
+        return this;
+    }
+
+    public String getLessonDesc() {
+        return lessonDesc;
+    }
+
+    public Lesson setLessonDesc(String lessonDesc) {
+        this.lessonDesc = lessonDesc;
+        return this;
+    }
+
+    public String getLessonName() {
+        return lessonName;
+    }
+
+    public Lesson setLessonName(String lessonName) {
+        this.lessonName = lessonName;
         return this;
     }
 
@@ -87,21 +97,12 @@ public class Lesson implements Serializable {
         return this;
     }
 
-    public String getShowText() {
-        return showText;
+    public long getCourseSeqId() {
+        return courseSeqId;
     }
 
-    public Lesson setShowText(String showText) {
-        this.showText = showText;
-        return this;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public Lesson setDesc(String desc) {
-        this.desc = desc;
+    public Lesson setCourseSeqId(long courseSeqId) {
+        this.courseSeqId = courseSeqId;
         return this;
     }
 }

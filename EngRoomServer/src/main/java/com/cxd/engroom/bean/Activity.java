@@ -11,40 +11,13 @@ public class Activity implements Serializable {
     private long activitySeqId;
     @NotNull
     @Column(length = 128)
-    private String name;
+    private String activityName;
 
-    private String desc;
+    private String activityDesc;
     @NotNull
     @Column(length = 19)
     private String finishTime;
 
-
-    public String getFinishTime() {
-        return finishTime;
-    }
-
-    public Activity setFinishTime(String finishTime) {
-        this.finishTime = finishTime;
-        return this;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public Activity setDesc(String desc) {
-        this.desc = desc;
-        return this;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Activity setName(String name) {
-        this.name = name;
-        return this;
-    }
 
     public long getActivitySeqId() {
         return activitySeqId;
@@ -52,6 +25,33 @@ public class Activity implements Serializable {
 
     public Activity setActivitySeqId(long activitySeqId) {
         this.activitySeqId = activitySeqId;
+        return this;
+    }
+
+    public String getActivityName() {
+        return activityName;
+    }
+
+    public Activity setActivityName(String activityName) {
+        this.activityName = activityName;
+        return this;
+    }
+
+    public String getActivityDesc() {
+        return activityDesc;
+    }
+
+    public Activity setActivityDesc(String activityDesc) {
+        this.activityDesc = activityDesc;
+        return this;
+    }
+
+    public String getFinishTime() {
+        return finishTime;
+    }
+
+    public Activity setFinishTime(String finishTime) {
+        this.finishTime = finishTime;
         return this;
     }
 }

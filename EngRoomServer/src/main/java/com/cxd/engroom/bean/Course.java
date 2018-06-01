@@ -4,10 +4,10 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 @Entity
-public class Chapter implements Serializable {
+public class Course implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long chapterSeqId;
+    private long courseSeqId;
     @NotNull
     @Column(length = 32)
     private String chapterTitle;
@@ -20,7 +20,7 @@ public class Chapter implements Serializable {
     @Column(precision = 2)
     private int seqNo;
     @NotNull
-    private boolean show;
+    private boolean ishow;
     @NotNull
     @Column(length = 7)
     private String bgColor="#FFFFFF";
@@ -33,7 +33,7 @@ public class Chapter implements Serializable {
         return chapterTitle;
     }
 
-    public Chapter setChapterTitle(String chapterTitle) {
+    public Course setChapterTitle(String chapterTitle) {
         this.chapterTitle = chapterTitle;
         return this;
     }
@@ -42,7 +42,7 @@ public class Chapter implements Serializable {
         return chapterDesc;
     }
 
-    public Chapter setChapterDesc(String chapterDesc) {
+    public Course setChapterDesc(String chapterDesc) {
         this.chapterDesc = chapterDesc;
         return this;
     }
@@ -51,25 +51,18 @@ public class Chapter implements Serializable {
         return createTime;
     }
 
-    public Chapter setCreateTime(String createTime) {
+    public Course setCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    public boolean isShow() {
-        return show;
-    }
 
-    public Chapter setShow(boolean show) {
-        this.show = show;
-        return this;
-    }
 
     public String getBgColor() {
         return bgColor;
     }
 
-    public Chapter setBgColor(String bgColor) {
+    public Course setBgColor(String bgColor) {
         this.bgColor = bgColor;
         return this;
     }
@@ -78,7 +71,7 @@ public class Chapter implements Serializable {
         return textColor;
     }
 
-    public Chapter setTextColor(String textColor) {
+    public Course setTextColor(String textColor) {
         this.textColor = textColor;
         return this;
     }
@@ -87,17 +80,27 @@ public class Chapter implements Serializable {
         return seqNo;
     }
 
-    public Chapter setSeqNo(int seqNo) {
+    public Course setSeqNo(int seqNo) {
         this.seqNo = seqNo;
         return this;
     }
 
-    public long getChapterSeqId() {
-        return chapterSeqId;
+
+    public boolean isIshow() {
+        return ishow;
     }
 
-    public Chapter setChapterSeqId(long chapterSeqId) {
-        this.chapterSeqId = chapterSeqId;
+    public Course setIshow(boolean ishow) {
+        this.ishow = ishow;
+        return this;
+    }
+
+    public long getCourseSeqId() {
+        return courseSeqId;
+    }
+
+    public Course setCourseSeqId(long courseSeqId) {
+        this.courseSeqId = courseSeqId;
         return this;
     }
 }
