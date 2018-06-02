@@ -8,7 +8,7 @@ import java.io.Serializable;
 public class Paragraph implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long paragraphSeqId;
+    private long seqId;
     @NotNull
     private long lessonSeqId;
     @NotNull
@@ -29,14 +29,6 @@ public class Paragraph implements Serializable {
     private String modifyTime;
 
 
-    public long getParagraphSeqId() {
-        return paragraphSeqId;
-    }
-
-    public Paragraph setParagraphSeqId(long paragraphSeqId) {
-        this.paragraphSeqId = paragraphSeqId;
-        return this;
-    }
 
     public long getLessonSeqId() {
         return lessonSeqId;
@@ -98,6 +90,15 @@ public class Paragraph implements Serializable {
 
     public Paragraph setStandardAudio(String standardAudio) {
         this.standardAudio = standardAudio;
+        return this;
+    }
+
+    public long getSeqId() {
+        return seqId;
+    }
+
+    public Paragraph setSeqId(long seqId) {
+        this.seqId = seqId;
         return this;
     }
 }

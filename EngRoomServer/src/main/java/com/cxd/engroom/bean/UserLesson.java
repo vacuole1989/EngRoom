@@ -8,7 +8,7 @@ import java.io.Serializable;
 public class UserLesson implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long userLessonSeqId;
+    private long seqId;
     @NotNull
     private long userInfoSeqId;
     @NotNull
@@ -61,14 +61,7 @@ public class UserLesson implements Serializable {
         return this;
     }
 
-    public long getUserLessonSeqId() {
-        return userLessonSeqId;
-    }
 
-    public UserLesson setUserLessonSeqId(long userLessonSeqId) {
-        this.userLessonSeqId = userLessonSeqId;
-        return this;
-    }
 
     public boolean isReadThree() {
         return readThree;
@@ -85,6 +78,15 @@ public class UserLesson implements Serializable {
 
     public UserLesson setAllErrorWords(String allErrorWords) {
         this.allErrorWords = allErrorWords;
+        return this;
+    }
+
+    public long getSeqId() {
+        return seqId;
+    }
+
+    public UserLesson setSeqId(long seqId) {
+        this.seqId = seqId;
         return this;
     }
 }

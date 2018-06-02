@@ -8,7 +8,7 @@ public class Activity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long activitySeqId;
+    private long seqId;
     @NotNull
     @Column(length = 128)
     private String activityName;
@@ -19,14 +19,7 @@ public class Activity implements Serializable {
     private String finishTime;
 
 
-    public long getActivitySeqId() {
-        return activitySeqId;
-    }
 
-    public Activity setActivitySeqId(long activitySeqId) {
-        this.activitySeqId = activitySeqId;
-        return this;
-    }
 
     public String getActivityName() {
         return activityName;
@@ -52,6 +45,15 @@ public class Activity implements Serializable {
 
     public Activity setFinishTime(String finishTime) {
         this.finishTime = finishTime;
+        return this;
+    }
+
+    public long getSeqId() {
+        return seqId;
+    }
+
+    public Activity setSeqId(long seqId) {
+        this.seqId = seqId;
         return this;
     }
 }

@@ -1,2 +1,28 @@
-<!--pages/level/level.wxml-->
-<text>pages/level/level.wxml</text>
+<view class="index">
+    <view class="banner-scroll">
+        <swiper indicator-dots="true" autoplay="true" class="Bannerswiper">
+            <block wx:for="{{carousels}}" wx:key="seqId">
+                <swiper-item>
+                    <view class="swiper-item">
+                        <navigator>
+                            <view class="pic">
+                                <image src="{{item.picUrl}}" mode="aspectFit" class="slide-image" />
+                            </view>
+                            <view class="title">
+                                <text>{{item.carouselPicName}}</text>
+                            </view>
+                        </navigator>
+                    </view>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+
+    <view class="chapter">
+        <block wx:for="{{levels}}" wx:key="seqId">
+            <navigator url='/pages/lesson/lesson?seqId={{item.seqId}}' class="course">
+            <view class="levelball"></view>
+                  {{item.levelName}} {{item.levelDesc}}</navigator>
+        </block>
+    </view>
+</view>

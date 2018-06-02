@@ -9,20 +9,14 @@ public class CarouselPic implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long carouselPicSeqId;
+    private long seqId;
     @NotNull
     @Column(length = 32)
     private String carouselPicName;
     @Column(length = 128)
     private String carouselPicDesc;
-    /**
-     * 1-超链接，2-图片
-     */
     @NotNull
-    @Column(precision = 1)
-    private int type = 1;
-    @NotNull
-    private long articleSeqId;
+    private long levelSeqId;
     @NotNull
     private String picUrl;
     @NotNull
@@ -32,14 +26,7 @@ public class CarouselPic implements Serializable {
     @Column(precision = 1)
     private int seqNo=1;
 
-    public long getCarouselPicSeqId() {
-        return carouselPicSeqId;
-    }
 
-    public CarouselPic setCarouselPicSeqId(long carouselPicSeqId) {
-        this.carouselPicSeqId = carouselPicSeqId;
-        return this;
-    }
 
     public String getCarouselPicName() {
         return carouselPicName;
@@ -56,24 +43,6 @@ public class CarouselPic implements Serializable {
 
     public CarouselPic setCarouselPicDesc(String carouselPicDesc) {
         this.carouselPicDesc = carouselPicDesc;
-        return this;
-    }
-
-    public int getType() {
-        return type;
-    }
-
-    public CarouselPic setType(int type) {
-        this.type = type;
-        return this;
-    }
-
-    public long getArticleSeqId() {
-        return articleSeqId;
-    }
-
-    public CarouselPic setArticleSeqId(long articleSeqId) {
-        this.articleSeqId = articleSeqId;
         return this;
     }
 
@@ -101,6 +70,24 @@ public class CarouselPic implements Serializable {
 
     public CarouselPic setSeqNo(int seqNo) {
         this.seqNo = seqNo;
+        return this;
+    }
+
+    public long getSeqId() {
+        return seqId;
+    }
+
+    public CarouselPic setSeqId(long seqId) {
+        this.seqId = seqId;
+        return this;
+    }
+
+    public long getLevelSeqId() {
+        return levelSeqId;
+    }
+
+    public CarouselPic setLevelSeqId(long levelSeqId) {
+        this.levelSeqId = levelSeqId;
         return this;
     }
 }

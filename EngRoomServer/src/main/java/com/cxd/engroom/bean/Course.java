@@ -7,7 +7,7 @@ import java.io.Serializable;
 public class Course implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long courseSeqId;
+    private long seqId;
     @NotNull
     @Column(length = 32)
     private String chapterTitle;
@@ -95,12 +95,13 @@ public class Course implements Serializable {
         return this;
     }
 
-    public long getCourseSeqId() {
-        return courseSeqId;
+
+    public long getSeqId() {
+        return seqId;
     }
 
-    public Course setCourseSeqId(long courseSeqId) {
-        this.courseSeqId = courseSeqId;
+    public Course setSeqId(long seqId) {
+        this.seqId = seqId;
         return this;
     }
 }

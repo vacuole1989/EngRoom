@@ -8,7 +8,7 @@ import java.io.Serializable;
 public class UserParagraph implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long userParagraphSeqId;
+    private long seqId;
     @NotNull
     private long userLessonSeqId;
     @NotNull
@@ -90,14 +90,6 @@ public class UserParagraph implements Serializable {
         return this;
     }
 
-    public long getUserParagraphSeqId() {
-        return userParagraphSeqId;
-    }
-
-    public UserParagraph setUserParagraphSeqId(long userParagraphSeqId) {
-        this.userParagraphSeqId = userParagraphSeqId;
-        return this;
-    }
 
     public Integer getUserParagraphScore() {
         return userParagraphScore;
@@ -105,6 +97,15 @@ public class UserParagraph implements Serializable {
 
     public UserParagraph setUserParagraphScore(Integer userParagraphScore) {
         this.userParagraphScore = userParagraphScore;
+        return this;
+    }
+
+    public long getSeqId() {
+        return seqId;
+    }
+
+    public UserParagraph setSeqId(long seqId) {
+        this.seqId = seqId;
         return this;
     }
 }

@@ -11,7 +11,7 @@ public class UserInfo implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long userInfoSeqId;
+    private long seqId;
     @NotNull
     @Column(length = 32)
     private String openId;
@@ -114,12 +114,13 @@ public class UserInfo implements Serializable{
         return this;
     }
 
-    public long getUserInfoSeqId() {
-        return userInfoSeqId;
+
+    public long getSeqId() {
+        return seqId;
     }
 
-    public UserInfo setUserInfoSeqId(long userInfoSeqId) {
-        this.userInfoSeqId = userInfoSeqId;
+    public UserInfo setSeqId(long seqId) {
+        this.seqId = seqId;
         return this;
     }
 }

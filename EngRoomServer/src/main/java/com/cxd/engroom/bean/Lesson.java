@@ -10,7 +10,7 @@ public class Lesson implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long lessonSeqId;
+    private long seqId;
     @NotNull
     private long courseSeqId;
     @Column(precision = 3)
@@ -31,17 +31,6 @@ public class Lesson implements Serializable {
     @NotNull
     @Column(length = 19)
     private String modifyTime;
-
-    public long getLessonSeqId() {
-        return lessonSeqId;
-    }
-
-    public Lesson setLessonSeqId(long lessonSeqId) {
-        this.lessonSeqId = lessonSeqId;
-        return this;
-    }
-
-
 
     public int getSeqNo() {
         return seqNo;
@@ -103,6 +92,15 @@ public class Lesson implements Serializable {
 
     public Lesson setCourseSeqId(long courseSeqId) {
         this.courseSeqId = courseSeqId;
+        return this;
+    }
+
+    public long getSeqId() {
+        return seqId;
+    }
+
+    public Lesson setSeqId(long seqId) {
+        this.seqId = seqId;
         return this;
     }
 }

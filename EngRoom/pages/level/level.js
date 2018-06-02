@@ -1,18 +1,36 @@
-// pages/level/level.js
+const config = require('../../config.js')
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+      carousels:[],
+      levels:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+      var _this = this;
+      wx.request({
+          url: config.url + '/getCarousels?seqId='+options.seqId,
+          success: function (res) {
+              _this.setData({
+                  carousels: res.data
+              })
+          }
+      })
+      wx.request({
+          url: config.url + '/getLevels?seqId='+options.seqId,
+          success: function (res) {
+              _this.setData({
+                  levels: res.data
+              })
+          }
+      })
   },
 
   /**

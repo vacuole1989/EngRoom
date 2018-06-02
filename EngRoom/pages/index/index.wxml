@@ -1,53 +1,26 @@
 <view class="index">
     <view class="banner-scroll">
         <swiper indicator-dots="true" autoplay="true" class="Bannerswiper">
-            <!-- <block wx:for="{{banners}}"> -->
+            <block wx:for="{{carousels}}" wx:key="seqId">
                 <swiper-item>
                     <view class="swiper-item">
-                        <navigator >
+                        <navigator>
                             <view class="pic">
-                                <image src="https://wujieshidai.com/EngRoomServer/1.jpg" mode="aspectFit" class="slide-image"/>
+                                <image src="{{item.picUrl}}" mode="aspectFit" class="slide-image" />
                             </view>
                             <view class="title">
-                                <text>English 1</text>
+                                <text>{{item.carouselPicName}}</text>
                             </view>
                         </navigator>
                     </view>
                 </swiper-item>
-                <swiper-item>
-                    <view class="swiper-item">
-                        <navigator >
-                            <view class="pic">
-                                <image src="https://wujieshidai.com/EngRoomServer/2.jpg" mode="aspectFit" class="slide-image"/>
-                            </view>
-                            <view class="title">
-                                <text>English 2</text>
-                            </view>
-                        </navigator>
-                    </view>
-                </swiper-item>
-                <swiper-item>
-                    <view class="swiper-item">
-                        <navigator >
-                            <view class="pic">
-                                <image src="https://wujieshidai.com/EngRoomServer/3.jpg" mode="aspectFit" class="slide-image"/>
-                            </view>
-                            <view class="title">
-                                <text>English 3</text>
-                            </view>
-                        </navigator>
-                    </view>
-                </swiper-item>
-            <!-- </block> -->
+            </block>
         </swiper>
     </view>
 
     <view class="chapter">
-        <navigator url='/pages/level/level?seqId=1' class="weui_btn weui_btn_plain_primary">Course A for new chapter English 1</navigator>
-        <navigator url='/pages/level/level?seqId=1' class="weui_btn weui_btn_plain_primary">Course A for new chapter English 2</navigator>
-        <button class="weui_btn weui_btn_plain_primary">Course A for new chapter English 3</button>
-        <button class="weui_btn weui_btn_plain_primary">Course A for new chapter English 4</button>
- 
+        <block wx:for="{{courses}}" wx:key="seqId">
+            <navigator url='/pages/level/level?seqId={{item.seqId}}' style='border-color:{{item.bgColor}};color:{{item.textColor}};' class="course">{{item.chapterTitle}} {{item.chapterDesc}}</navigator>
+        </block>
     </view>
-
 </view>
