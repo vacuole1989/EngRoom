@@ -1,0 +1,26 @@
+<view class="result">
+    <view class="result-text">
+        <text class="left-text">手机型号</text>
+        <text class="right-text">{{sysData.model}}</text>
+    </view>
+    <view class="result-text">
+        <text class="left-text">手机品牌</text>
+        <text class="right-text">{{sysData.brand}}</text>
+    </view>
+    <view class="result-text">
+        <text class="left-text">系统版本</text>
+        <text class="right-text">{{sysData.system}}</text>
+    </view>
+    <view class="result-text">
+        <text class="left-text">屏幕像素</text>
+        <text class="right-text">{{sysData.screenWidth}} X {{sysData.screenHeight}}</text>
+    </view>
+    <view class="result-text">
+        <text class="left-text">微信版本</text>
+        <text class="right-text">{{sysData.version}}</text>
+    </view>
+    <view class="result-text">
+        <text class="left-text">微信语言</text>
+        <text class="right-text">{{sysData.language}}</text>
+    </view>
+</view>

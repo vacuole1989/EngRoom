@@ -1,0 +1,29 @@
+<view class="main">
+    <view class="head">{{lesson.lessonName}}</view>
+    <view class="words">
+        <block wx:for="{{words}}" wx:key="seqId">
+            <view class="word_container {{cIndex==index?'active':''}}" bindtap='onChooseIndex' data-idx="{{index}}">
+                <image class="person-img" src='../image/person-fill.png'></image>
+                <block wx:for="{{item.wordS}}" wx:for-item="itemS">
+                    <block wx:if="{{itemS.right==-1}}"><text class="red">{{itemS.value}} </text></block>
+                    <block wx:if="{{itemS.right==0}}"><text>{{itemS.value}} </text></block>
+                    <block wx:if="{{itemS.right==1}}"><text class="green">{{itemS.value}} </text></block>
+                </block>
+                <!-- <block wx:if="{{null!=item.userWord}}">{{item.userWord.errorWords}}</block> -->
+                <view class="audio" bindtap='readAudio' data-idx="{{index}}" wx:if="{{null!=item.userWord}}">
+                    <image wx:if="{{!item.showWifi}}" class="audio-img" src='../image/wifi.png'></image>
+                    <view class="text">{{item.userWord.userDuration}}s</view>
+                </view>
+                <view class="score" wx:if="{{null!=item.userWord}}">{{item.userWord.userWordScore}}分</view>
+                <view class="count" wx:if="{{null!=item.userWord}}">{{item.userWord.readCount}}次</view>
+                <view class="audio-txt" wx:if="{{null==item.userWord}}">
+                    <view class="text">请点击下方按钮录音</view>
+                </view>
+
+            </view>
+        </block>
+    </view>
+    <view class="record" bindtouchstart='touchS' bindtouchend='touchE'>
+        <image src='../image/record.png'></image>
+    </view>
+</view>

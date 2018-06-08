@@ -1,0 +1,117 @@
+page{
+    background-color: #EBEBEB;
+}
+.main .head {
+    height: 150rpx;
+    top: 0;
+    left: 0;
+    background-color: yellow;
+    position: fixed;
+    width: 100%;
+    font-size: 60rpx;
+    text-align: center;
+    line-height: 150rpx;
+    z-index: 1;
+}
+.red{
+    color: red;
+}
+.green{
+    color: green;
+}
+.main .words {
+    margin-top: 150rpx;
+    padding: 30rpx;
+}
+
+.main .words .word_container {
+    position: relative;
+  
+    padding:10rpx;
+    font-size: 30rpx;
+}
+
+.main .words .active {
+    background-color: lightskyblue;
+    border-radius: 20rpx;
+}
+
+.main .words .word_container .person-img {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 10rpx;
+}
+.main .words .word_container .audio-img {
+    width: 50rpx;
+    height: 50rpx;
+    margin-right: 10rpx;
+}
+
+.main .words .word_container .audio {
+    height: 45rpx;
+    background-color: #FFF;
+    border-radius: 10rpx;
+    word-break: break-word;
+    color: black;
+    padding: 5rpx;
+    line-height: 45rpx;
+    width: 50%;
+    position: relative;
+
+}
+.main .words .word_container .audio-txt {
+    height: 45rpx;
+    color: black;
+    padding: 5rpx;
+    line-height: 45rpx;
+
+
+
+}
+.main .words .word_container .audio .text {
+    font-size: 30rpx;
+    line-height: 45rpx;
+    height: 45rpx;
+    position: absolute;
+    right: 5rpx;
+    top: 5rpx;
+    color: #888888;
+}
+.main .words .word_container  .score {
+    font-size: 30rpx;
+    line-height: 45rpx;
+    height: 45rpx;
+    position: absolute;
+    left: calc(50% + 40rpx);
+    top: 60rpx;
+    color: red;
+    width: 120rpx;
+    text-align: center;
+}
+.main .words .word_container  .count {
+    font-size: 30rpx;
+    line-height: 45rpx;
+    height: 45rpx;
+    position: absolute;
+    left: calc(50% + 180rpx);
+    top: 60rpx;
+    color: blue;
+    width: 120rpx;
+    text-align: center;
+}
+.main .record{
+    position: fixed;
+    left: calc(50% - 50rpx);
+    height: 100rpx;
+    width: 100rpx;
+    border-radius: 50rpx;
+    border:2rpx solid #1296db;
+    text-align: center;
+    line-height: 100rpx;
+    bottom: 50rpx;
+}
+.main .record image{
+    height:60rpx;
+    width: 60rpx;
+    margin-top: 20rpx;
+}
