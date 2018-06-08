@@ -21,8 +21,7 @@
     <view class="chapter">
         <block wx:for="{{levels}}" wx:key="seqId">
             <navigator url='/pages/lesson/lesson?seqId={{item.seqId}}' class="course">
-            <view class="levelball"></view>
-                  {{item.levelName}} {{item.levelDesc}}</navigator>
+                {{item.levelName}} {{item.levelDesc}}</navigator>
         </block>
     </view>
 </view>

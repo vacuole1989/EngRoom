@@ -28,6 +28,7 @@ public class Course implements Serializable {
     @Column(length = 7)
     private String textColor="#000000";
 
+    private String smallPic;
 
     public String getChapterTitle() {
         return chapterTitle;
@@ -102,6 +103,15 @@ public class Course implements Serializable {
 
     public Course setSeqId(long seqId) {
         this.seqId = seqId;
+        return this;
+    }
+
+    public String getSmallPic() {
+        return smallPic;
+    }
+
+    public Course setSmallPic(String smallPic) {
+        this.smallPic = smallPic;
         return this;
     }
 }

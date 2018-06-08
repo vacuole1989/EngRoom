@@ -3,9 +3,11 @@ package com.cxd.engroom.bean;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
+import java.util.List;
+
 @Entity
 @Table(uniqueConstraints = {@UniqueConstraint(columnNames={"lessonSeqId", "seqNo"})})
-public class Paragraph implements Serializable {
+public class Word implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long seqId;
@@ -28,13 +30,19 @@ public class Paragraph implements Serializable {
     @Column(length = 19)
     private String modifyTime;
 
+    @Transient
+    private UserWord userWord;
+
+    @Transient
+    private List<WordS> wordS;
+
 
 
     public long getLessonSeqId() {
         return lessonSeqId;
     }
 
-    public Paragraph setLessonSeqId(long lessonSeqId) {
+    public Word setLessonSeqId(long lessonSeqId) {
         this.lessonSeqId = lessonSeqId;
         return this;
     }
@@ -43,7 +51,7 @@ public class Paragraph implements Serializable {
         return seqNo;
     }
 
-    public Paragraph setSeqNo(int seqNo) {
+    public Word setSeqNo(int seqNo) {
         this.seqNo = seqNo;
         return this;
     }
@@ -52,7 +60,7 @@ public class Paragraph implements Serializable {
         return standardAudioDuration;
     }
 
-    public Paragraph setStandardAudioDuration(int standardAudioDuration) {
+    public Word setStandardAudioDuration(int standardAudioDuration) {
         this.standardAudioDuration = standardAudioDuration;
         return this;
     }
@@ -61,7 +69,7 @@ public class Paragraph implements Serializable {
         return createTime;
     }
 
-    public Paragraph setCreateTime(String createTime) {
+    public Word setCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -70,7 +78,7 @@ public class Paragraph implements Serializable {
         return modifyTime;
     }
 
-    public Paragraph setModifyTime(String modifyTime) {
+    public Word setModifyTime(String modifyTime) {
         this.modifyTime = modifyTime;
         return this;
     }
@@ -79,7 +87,7 @@ public class Paragraph implements Serializable {
         return standardContent;
     }
 
-    public Paragraph setStandardContent(String standardContent) {
+    public Word setStandardContent(String standardContent) {
         this.standardContent = standardContent;
         return this;
     }
@@ -88,7 +96,7 @@ public class Paragraph implements Serializable {
         return standardAudio;
     }
 
-    public Paragraph setStandardAudio(String standardAudio) {
+    public Word setStandardAudio(String standardAudio) {
         this.standardAudio = standardAudio;
         return this;
     }
@@ -97,8 +105,26 @@ public class Paragraph implements Serializable {
         return seqId;
     }
 
-    public Paragraph setSeqId(long seqId) {
+    public Word setSeqId(long seqId) {
         this.seqId = seqId;
+        return this;
+    }
+
+    public UserWord getUserWord() {
+        return userWord;
+    }
+
+    public Word setUserWord(UserWord userWord) {
+        this.userWord = userWord;
+        return this;
+    }
+
+    public List<WordS> getWordS() {
+        return wordS;
+    }
+
+    public Word setWordS(List<WordS> wordS) {
+        this.wordS = wordS;
         return this;
     }
 }

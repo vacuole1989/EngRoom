@@ -1,6 +1,7 @@
 package com.cxd.engroom.util;
 
 import org.apache.commons.codec.binary.Base64;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
 
@@ -57,6 +58,30 @@ public class Base64Util {
         InputStream in = null;
         try {
             in = new FileInputStream(file);
+            byte[] bytes = new byte[in.available()];
+            int length = in.read(bytes);
+            base64 = Base64.encodeBase64String(bytes);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (in != null) {
+                    in.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return base64;
+    }
+
+    public static String fileToBase64(MultipartFile file) {
+        String base64 = null;
+        InputStream in = null;
+        try {
+            in = file.getInputStream();
             byte[] bytes = new byte[in.available()];
             int length = in.read(bytes);
             base64 = Base64.encodeBase64String(bytes);

@@ -5,14 +5,14 @@ import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @Entity
-@Table(uniqueConstraints = {@UniqueConstraint(columnNames={"courseSeqId", "seqNo"})})
+@Table(uniqueConstraints = {@UniqueConstraint(columnNames={"levelSeqId", "seqNo"})})
 public class Lesson implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long seqId;
     @NotNull
-    private long courseSeqId;
+    private long levelSeqId;
     @Column(precision = 3)
     @NotNull
     private int seqNo;
@@ -31,6 +31,19 @@ public class Lesson implements Serializable {
     @NotNull
     @Column(length = 19)
     private String modifyTime;
+    @Column(precision = 4)
+    private int pleft=0;
+    @Transient
+    private String showStyle;
+
+    public int getPleft() {
+        return pleft;
+    }
+
+    public Lesson setPleft(int pleft) {
+        this.pleft = pleft;
+        return this;
+    }
 
     public int getSeqNo() {
         return seqNo;
@@ -86,21 +99,30 @@ public class Lesson implements Serializable {
         return this;
     }
 
-    public long getCourseSeqId() {
-        return courseSeqId;
-    }
-
-    public Lesson setCourseSeqId(long courseSeqId) {
-        this.courseSeqId = courseSeqId;
-        return this;
-    }
-
     public long getSeqId() {
         return seqId;
     }
 
     public Lesson setSeqId(long seqId) {
         this.seqId = seqId;
+        return this;
+    }
+
+    public long getLevelSeqId() {
+        return levelSeqId;
+    }
+
+    public Lesson setLevelSeqId(long levelSeqId) {
+        this.levelSeqId = levelSeqId;
+        return this;
+    }
+
+    public String getShowStyle() {
+        return showStyle;
+    }
+
+    public Lesson setShowStyle(String showStyle) {
+        this.showStyle = showStyle;
         return this;
     }
 }

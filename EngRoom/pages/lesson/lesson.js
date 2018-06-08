@@ -1,65 +1,38 @@
-// pages/lesson/lesson.js
+const config = require('../../config.js')
+const app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    level:{},
+    lessons:[],
+    userInfo: {}
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  onBindTaps:function(e){
+    wx.navigateTo({
+        url: '/pages/word/word?seqId='+e.currentTarget.dataset.seqid,
+    })
+  },
   onLoad: function (options) {
-  
+    var _this=this;
+    _this.setData({
+        userInfo: app.globalData.userInfo
+    })
+    wx.request({
+        url: config.url + '/getLevel?seqId=' + options.seqId,
+        success: function (res) {
+            _this.setData({
+                level: res.data
+            })
+        }
+    })
+    wx.request({
+        url: config.url + '/getLessons?seqId=' + options.seqId,
+        success: function (res) {
+            _this.setData({
+                lessons: res.data
+            })
+        }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage: function () {
   
   }

@@ -1,2 +1,8 @@
-<!--pages/lesson/lesson.wxml-->
-<text>pages/lesson/lesson.wxml</text>
+<view class="main">
+    <view class="head">{{level.levelName}}</view>
+    <view class="levels">
+        <block wx:for="{{lessons}}" wx:key="seqId">
+            <view class="lesson_ball" bindtap='onBindTaps' data-seqid="{{item.seqId}}" style="{{item.showStyle}}">{{item.seqNo}}</view>
+        </block>
+    </view>
+</view>

@@ -7,7 +7,9 @@ Page({
    */
   data: {
       carousels:[],
-      levels:[]
+      levels:[],
+      course:{},
+      userInfo: {}
   },
 
   /**
@@ -15,11 +17,22 @@ Page({
    */
   onLoad: function (options) {
       var _this = this;
+      _this.setData({
+          userInfo: app.globalData.userInfo
+      })
       wx.request({
           url: config.url + '/getCarousels?seqId='+options.seqId,
           success: function (res) {
               _this.setData({
                   carousels: res.data
+              })
+          }
+      })
+      wx.request({
+          url: config.url + '/getCourse?seqId=' + options.seqId,
+          success: function (res) {
+              _this.setData({
+                  course: res.data
               })
           }
       })
